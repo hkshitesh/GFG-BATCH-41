@@ -11,4 +11,4 @@
 
     ## Jenkins Download Link
 
-    https://www.jenkins.io/download/thank-you-downloading-windows-installer-stable
+    https://www.jenkins.io/download/
