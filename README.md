@@ -12,3 +12,9 @@
     ## Jenkins Download Link
 
     https://www.jenkins.io/download/
+
+## EKS Cluster Commands
+
+    aws eks --region ap-south-1 describe-cluster --name demoCluster --query cluster.status
+
+    aws eks --region ap-south-1 update-kubeconfig --name demoCluster
