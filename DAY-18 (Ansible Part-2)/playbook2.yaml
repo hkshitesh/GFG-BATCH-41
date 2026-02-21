@@ -1,0 +1,9 @@
+---
+- hosts: devops
+  user: gfg
+  become: yes  
+  tasks:
+    - name: Install HTTPD
+      action: yum name=httpd state=present
+    - name: Start HTTPD
+      action: service name=httpd state=started
