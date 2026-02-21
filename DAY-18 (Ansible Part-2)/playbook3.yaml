@@ -1,0 +1,14 @@
+---
+- hosts: devops
+  user: gfg
+  become: yes
+  connection: ssh
+  vars:    
+    currstatus: absent
+  tasks:
+    - name: Install HTTPD
+      action: yum name='httpd' state='{{currstatus}}'
+    - name: Install Git
+      action: yum name='git' state='{{currstatus}}'
+    - name: Install HTOP
+      action: yum name='htop' state='{{currstatus}}'
