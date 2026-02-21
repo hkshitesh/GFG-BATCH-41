@@ -7,10 +7,10 @@
 
   tasks:
     - name: Remove HTOP
-      action: apt name=htop state='{{ currstate }}' purge=yes
+      action: yum name=htop state='{{ currstate }}' purge=yes
 
     - name: Remove Git
-      action: apt name=git state='{{ currstate }}' purge=yes
+      action: yum name=git state='{{ currstate }}' purge=yes
 
     - name: Autoremove unused packages
-      action: apt autoremove=yes
+      action: yum autoremove=yes
