@@ -2,15 +2,16 @@
 - hosts: devops
   user: gfg
   become: yes
+
   vars:
     currstate: absent
 
   tasks:
     - name: Remove HTOP
-      action: yum name=htop state='{{ currstate }}' purge=yes
+      action: dnf name=htop state='{{ currstate }}'
 
     - name: Remove Git
-      action: yum name=git state='{{ currstate }}' purge=yes
+      action: dnf name=git state='{{ currstate }}'
 
     - name: Autoremove unused packages
-      action: yum autoremove=yes
+      action: command dnf autoremove -y
