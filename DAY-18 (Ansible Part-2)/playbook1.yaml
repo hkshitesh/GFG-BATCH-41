@@ -1,0 +1,6 @@
+---
+- hosts: devops
+  user: gfg
+  become: yes
+  connection: ssh
+  gather_facts: yes
