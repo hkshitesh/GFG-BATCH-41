@@ -1,0 +1,25 @@
+---
+- hosts: devops
+  remote_user: gfg
+  become: yes
+
+  vars:
+    operation: install
+    packages:
+      - git
+      - htop
+
+  tasks:
+    - name: Install packages
+      action: dnf name={{ item }} state=present update_cache=yes
+      loop: "{{ packages }}"
+      when: operation == "install"
+
+    - name: Remove packages
+      action: dnf name={{ item }} state=absent
+      loop: "{{ packages }}"
+      when: operation == "remove"
+
+    - name: Autoremove unused packages (only on removal)
+      action: command dnf autoremove -y
+      when: operation == "remove"
