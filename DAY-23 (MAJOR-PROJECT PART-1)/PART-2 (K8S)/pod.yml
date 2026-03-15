@@ -1,0 +1,10 @@
+apiVersion: v1  
+kind: Pod               
+metadata:               
+  name: major-pod         
+  labels:               
+    app: web         
+spec: 
+  containers:           
+    - name: major-container 
+      image: hkshitesh/gfgmajor41:main-dd0c21e
